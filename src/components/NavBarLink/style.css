@@ -20,10 +20,25 @@
     transition: color 0.2s linear;
 }
 
+.menu-link:hover .blur {
+    visibility: visible;
+}
+
 a {
     text-decoration: none;
     color: white;
     margin: 0 1vw;
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 10vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
 }
 
 .menu-link:hover:before,
@@ -33,9 +48,10 @@ a {
 
 .drop-content {
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 10vh;
     left: 15vw;
+    z-index: 2;
     min-height: 30vh;
     min-width: 70vw;
     width: fit-content;
@@ -73,4 +89,10 @@ a {
 .sub-link:hover,
 .link:hover {
     color: orange;
+}
+
+@media all and (max-width: 775px) {
+    .menu-link {
+        display: none;
+    }
 }

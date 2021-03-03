@@ -1,4 +1,5 @@
 import NavBar from '../NavBar'
+import TextBlock from '../TextBlock'
 import './style.css'
 
 function AppContainer() {
@@ -39,6 +40,7 @@ function AppContainer() {
     return (
         <div className='app-container'>
             <NavBar menuTabs={menuTabs} />
+            <TextBlock />
         </div>
     );
 }
