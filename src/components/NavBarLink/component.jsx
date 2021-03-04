@@ -11,7 +11,15 @@ function NavBarLink(props) {
         event.target.innerHTML = 'ᐁ';
       }
       else {
+        let shouldClose = document.querySelectorAll('.menu-link');
+        Array.from(shouldClose).map(elem => {
+          if (elem.lastElementChild.innerHTML === 'ᐃ') {
+            elem.lastElementChild.innerHTML = 'ᐁ';
+            elem.nextSibling.style.display = 'none';
+          }
+        })
         event.target.closest('.menu-link').nextSibling.style.display = 'flex';
+        event.target.closest('.menu-link').nextSibling.scrollIntoView();
         event.target.innerHTML = 'ᐃ';
       }
     }
@@ -21,12 +29,34 @@ function NavBarLink(props) {
         event.target.innerHTML = 'ᐁ';
       }
       else {
+        let shouldClose = document.querySelectorAll('.sub-menu-link');
+        Array.from(shouldClose).map(elem => {
+          if (elem.lastElementChild.innerHTML === 'ᐃ') {
+            elem.lastElementChild.innerHTML = 'ᐁ';
+            elem.nextSibling.style.display = 'none';
+          }
+        })
         event.target.closest('.sub-menu-link').nextSibling.style.display = 'flex';
+        event.target.closest('.sub-menu-link').nextSibling.scrollIntoView();
         event.target.innerHTML = 'ᐃ';
       }
     }
+    let listHeight = document.querySelector('.menu-list').clientHeight;
+    let menuHeight = document.querySelector('.menu').clientHeight;
+    let appHeight = window.screen.height;
     let blur = document.querySelector('.blur');
-    blur.style.top = document.querySelector('.menu-list').clientHeight + 'px';
+    let list = document.querySelector('.menu-list');
+    blur.style.top = listHeight + menuHeight + 'px';
+    if (appHeight <= menuHeight + listHeight) {
+      blur.style.display = 'none';
+      list.style.overflowY = 'auto';
+    }
+    else {
+      blur.style.display = 'block';
+      list.firstElementChild.scrollIntoView();
+      list.style.overflowY = 'hidden';
+    }
+
   }
 
   return (

@@ -21,7 +21,7 @@ function NavBar(props) {
             return elem.closest('DIV').previousElementSibling.lastElementChild.style.display = 'block';
         });
         let blur = document.querySelector('.blur');
-        blur.style.top = document.querySelector('.menu-list').clientHeight + 'px';
+        blur.style.top = document.querySelector('.menu-list').clientHeight + document.querySelector('.menu').clientHeight + 'px';
         blur.style.display = 'block';
     }
     return (
