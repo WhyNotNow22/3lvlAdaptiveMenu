@@ -17,6 +17,7 @@ function NavBarLink(props) {
             elem.lastElementChild.innerHTML = 'ᐁ';
             elem.nextSibling.style.display = 'none';
           }
+          return 1;
         })
         event.target.closest('.menu-link').nextSibling.style.display = 'flex';
         event.target.closest('.menu-link').nextSibling.scrollIntoView();
@@ -35,6 +36,7 @@ function NavBarLink(props) {
             elem.lastElementChild.innerHTML = 'ᐁ';
             elem.nextSibling.style.display = 'none';
           }
+          return 1;
         })
         event.target.closest('.sub-menu-link').nextSibling.style.display = 'flex';
         event.target.closest('.sub-menu-link').nextSibling.scrollIntoView();
