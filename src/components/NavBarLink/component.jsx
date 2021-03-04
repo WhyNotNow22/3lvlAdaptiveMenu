@@ -58,8 +58,8 @@ function NavBarLink(props) {
       list.firstElementChild.scrollIntoView();
       list.style.overflowY = 'hidden';
     }
-
   }
+
 
   return (
     <React.Fragment>
