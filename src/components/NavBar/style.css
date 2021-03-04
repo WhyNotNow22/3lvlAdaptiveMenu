@@ -6,6 +6,7 @@
     height: 10vh;
     background-color: blue;
     box-shadow: 0 0 45px black;
+    z-index: 10;
 }
 
 .menu-list {

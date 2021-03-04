@@ -21,7 +21,7 @@
 }
 
 .menu-link:hover .blur {
-    visibility: visible;
+    display: block;
 }
 
 a {
@@ -38,7 +38,7 @@ a {
     top: 10vh;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
-    visibility: hidden;
+    display: none;
 }
 
 .menu-link:hover:before,
@@ -99,6 +99,12 @@ a {
     display: none;
 }
 
+.third-menu {
+    display: none;
+    flex-direction: column;
+    padding-left: 3vw;
+}
+
 @media all and (max-width: 775px) {
     .menu-link {
         flex-direction: row;
@@ -108,9 +114,7 @@ a {
         width: 100%;
         border-bottom: 1px solid black;
     }
-    .blur {
-       display:  none;
-    }
+
     .menu-link:hover .drop-content{
         visibility: hidden;
     }
@@ -127,7 +131,7 @@ a {
 
     .sub-menu {
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         padding-left: 5vw;
         flex-direction: column;
         border-bottom: 1px solid black;
@@ -137,5 +141,15 @@ a {
         display: flex;
         justify-content: space-between;
         width: 100%;
+    }
+    .menu-link:hover .blur {
+        display: none;
+    }
+    .blur {
+        top: 0;
+        display: none;
+    }
+    a:hover {
+        color: orange;
     }
 }

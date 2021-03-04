@@ -12,11 +12,17 @@ function NavBar(props) {
         else {
             document.querySelector('.menu-list').style.display = 'none';
         }
-        const links = document.querySelectorAll('.link');
+        let links = document.querySelectorAll('.link');
         Array.from(links).map(elem => {
-          return elem.closest('.menu-link').lastElementChild.style.display = 'block';
-        })
-        
+            return elem.closest('.menu-link').lastElementChild.style.display = 'block';
+        });
+        links = document.querySelectorAll('.third-link');
+        Array.from(links).map(elem => {
+            return elem.closest('DIV').previousElementSibling.lastElementChild.style.display = 'block';
+        });
+        let blur = document.querySelector('.blur');
+        blur.style.top = document.querySelector('.menu-list').clientHeight + 'px';
+        blur.style.display = 'block';
     }
     return (
         <div className='menu'>
