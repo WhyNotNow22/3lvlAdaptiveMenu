@@ -1,6 +1,11 @@
 .menu {
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 100vw;
+    position: fixed;
+    height: 10vh;
+    background-color: blue;
+    box-shadow: 0 0 45px black;
 }
 
 .menu-list {
@@ -10,18 +15,10 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    width: 100%;
-    position: fixed;
-    height: 10vh;
-    background-color: blue;
-    box-shadow: 0 0 45px black;
 }
 
 .container {
     cursor: pointer;
-    position: fixed;
-    left: 90%;
-    top: 3%;
     display: none;
 }
   
@@ -49,6 +46,25 @@
 
 @media all and (max-width: 775px) {
     .container {
-       display: inline-block;   
+       display: inline-block;  
+       padding-right: 5vw; 
     }
+    .menu-list {
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        align-items: baseline;
+        background-color: blue;
+        border-top: 1px solid black;
+        display: none;
+    }
+    .menu {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    
 }
