@@ -64,8 +64,6 @@ function AppContainer() {
             'Элемент 6.2': {},
             'Элемент 6.3': {},
         },
-
-
     }
 
     return (

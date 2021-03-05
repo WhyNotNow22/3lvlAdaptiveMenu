@@ -2,10 +2,12 @@ import React from 'react'
 import './style.css'
 
 function NavBarLink(props) {
+
   const { name, childrens } = props;
 
   const openSubLinks = (event) => {
     if (event.target.closest('.menu-link') != null) {
+
       if (event.target.innerHTML === 'ᐃ') {
         event.target.closest('.menu-link').nextSibling.style.display = 'none';
         event.target.innerHTML = 'ᐁ';
@@ -25,6 +27,7 @@ function NavBarLink(props) {
       }
     }
     else {
+
       if (event.target.innerHTML === 'ᐃ') {
         event.target.closest('.sub-menu-link').nextSibling.style.display = 'none';
         event.target.innerHTML = 'ᐁ';
@@ -43,12 +46,14 @@ function NavBarLink(props) {
         event.target.innerHTML = 'ᐃ';
       }
     }
+
     let listHeight = document.querySelector('.menu-list').clientHeight;
     let menuHeight = document.querySelector('.menu').clientHeight;
     let appHeight = window.screen.height;
     let blur = document.querySelector('.blur');
     let list = document.querySelector('.menu-list');
     blur.style.top = listHeight + menuHeight + 'px';
+    
     if (appHeight <= menuHeight + listHeight) {
       blur.style.display = 'none';
       list.style.overflowY = 'auto';
